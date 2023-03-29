@@ -32,9 +32,6 @@ interface MyEditorProps {
 const MyEditor: React.FC<MyEditorProps> = ({ onChange, initialContent }) => {
   return (
     <div style={{ padding: 16 }}>
-      <h1>Markdown Editor</h1>
-      <Basic />
-      {/* <hr />
       <h1>WYSIWYG Editor</h1>
       <WysiwygEditor
         placeholder="Enter text..."
@@ -42,9 +39,6 @@ const MyEditor: React.FC<MyEditorProps> = ({ onChange, initialContent }) => {
       >
         <OnChangeJSON onChange={onChange} />
       </WysiwygEditor>
-      <hr />
-      <h1>Remirror Editor</h1>
-      <RemirrorEditor /> */}
     </div>
   );
 };

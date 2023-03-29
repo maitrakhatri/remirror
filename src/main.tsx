@@ -11,8 +11,8 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
       <Routes>
         <Route path="/" element={<App />} />
-        {/* <Route path="/remirror" element={<RemirrorEditor />} />
-        <Route path="/markdown" element={<Basic />} /> */}
+        <Route path="/remirror" element={<RemirrorEditor />} />
+        <Route path="/markdown" element={<Basic />} />
       </Routes>
     </React.StrictMode>
   </BrowserRouter>
