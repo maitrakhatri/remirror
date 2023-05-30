@@ -2,7 +2,7 @@ import "@remirror/styles/all.css";
 
 import { css } from "@emotion/css";
 import { createContextState } from "create-context-state";
-import React from "react";
+import React, { useState } from "react";
 import jsx from "refractor/lang/jsx.js";
 import md from "refractor/lang/markdown.js";
 import typescript from "refractor/lang/typescript.js";
@@ -47,9 +47,12 @@ function MarkdownPreview() {
 }
 
 export const Basic: React.FC = () => {
+  const [basicContent, setBasicContent] = useState(
+    JSON.parse(localStorage.getItem("markdown")!)
+  );
   document.title = "Markdown";
   return (
-    <MarkdownEditor placeholder="Start typing...">
+    <MarkdownEditor placeholder="Start typing..." initialContent={basicContent}>
       <MarkdownPreview />
     </MarkdownEditor>
   );
@@ -101,8 +104,13 @@ const MarkdownTextEditor = () => {
       manager={markdown.manager}
       autoRender="end"
       onChange={({ helpers, state }) => {
+        localStorage.setItem(
+          "markdown",
+          JSON.stringify(helpers.getMarkdown(state))
+        );
+        console.log("On change runs");
         const text = helpers.getText({ state });
-        return setVisual(text);
+        // return setVisual(text);
       }}
       classNames={[
         css`

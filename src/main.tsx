@@ -5,6 +5,7 @@ import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RemirrorEditor from "./Remirror";
 import Basic from "./Markdown";
+import New from "./New";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <BrowserRouter>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="/" element={<App />} />
         <Route path="/remirror" element={<RemirrorEditor />} />
         <Route path="/markdown" element={<Basic />} />
+        <Route path="/new" element={<New />} />
       </Routes>
     </React.StrictMode>
   </BrowserRouter>

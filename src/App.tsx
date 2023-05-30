@@ -1,10 +1,8 @@
 import "./App.css";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import type { RemirrorJSON } from "remirror";
 import { OnChangeJSON } from "@remirror/react";
 import { WysiwygEditor } from "@remirror/react-editors/wysiwyg";
-import RemirrorEditor from "./Remirror";
-import Basic from "./Markdown";
 
 function App() {
   const handleEditorChange = useCallback((json: RemirrorJSON) => {
